@@ -13,10 +13,132 @@
         crossorigin="anonymous"></script>
 
     <title>Paleumm</title>
+    <style>
+        div h2 {
+            padding-top: 56px;
+        }
+
+        div h5 {
+            padding-top: 15px;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a href="#" class="navbar-brand" id="home">Paleumm</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav"
+                aria-label="Expand Navigation">
+                <span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="#edu" class="nav-link">Education</a></li>
+                    <li class="nav-item"><a href="#employment" class="nav-link">Employment</a></li>
+                    <li class="nav-item"><a href="#experiences" class="nav-link">Experiences</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="#interests" class="nav-link">Interests</a></li>
+                    <li class="nav-item"><a href="#scholarship" class="nav-link">Scholarship</a></li>
+                </ul>
+            </div>
 
+        </div>
+    </div>
+    <div class="px-4 pt-5 my-5 text-center border-bottom">
+        <h1 class="display-4 fw-bold" id="home">Permpoon Boonyarit</h1>
+        <div class="overflow-hidden" style="max-height: 30vh;">
+            <div class="container px-5">
+                <img src="https://avatars.githubusercontent.com/u/87891616?v=4"
+                    class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="200" height="200"
+                    loading="lazy">
+            </div>
+        </div>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">A computer engineering student at the King Mongkut’s Institute of Technology Ladkrabang
+                with an interest in high
+                performance computing (HPC), distributed system and virtualization.</p>
+
+        </div>
+    </div>
+    <main>
+        <div class="container row g-5">
+            <div class="col">
+
+                <article class="blog-post">
+                    <h2 class="education mb-1" id="edu">Education</h2><br>
+                    <p>2021 - present<br>King Mongkut’s Institute of Technology Ladkrabang , B.A. Computer Engineering
+                    </p>
+                    <img src="http://via.placeholder.com/640x360" class="img-fluid border rounded-3 shadow-lg mb-4"
+                        alt="Example image" width="640" height="360" loading="lazy">
+                    <h2 class="employment mb-1" id="employment">Employment</h2>
+                    <h5>System Engineer and Software Engineer (CMKL)</h5>
+                    <ul>
+                        <li>System administration on Apex System</li>
+                        <li>Kubernetes deployment and management on DGX A100</li>
+                        <li>Config and managing Slurm and Kubernetes cluster</li>
+                        <li>Enable GPU features on Apex-Goliath application</li>
+                    </ul>
+                    <h5>Research Assistant (CMKL)</h5>
+                    <ul>
+                        <li>Training and Inferencing classification model from the given local Thai food dataset</li>
+                        <li>Traning and Inferencing the Megatron-NLP model</li>
+                        <li>Parallel data transfer over network</li>
+                    </ul>
+                    <img src="http://via.placeholder.com/640x360" class="img-fluid border rounded-3 shadow-lg mb-4"
+                        alt="Example image" width="640" height="360" loading="lazy">
+                    <h2 class="employment mb-1" id="experiences">Teaching Experiences</h2>
+                    <h5>Teaching Assistant (CMKL)</h5>
+                    <ul>
+                        <li>Teaching Assistant in Warp AiCE camp, Computer Vision subject</li>
+                    </ul>
+                    <img src="http://via.placeholder.com/640x360" class="img-fluid border rounded-3 shadow-lg mb-4"
+                        alt="Example image" width="640" height="360" loading="lazy">
+                    <h2 class="projects mb-1" id="projects">Relevant Projects</h2>
+                    <h5>Apex : The Next Generation of Cloud HPC+AI Infrastructure</h5>
+                    <p>A high-performance computing and storage platform for AI research of the future</p>
+                    <h5>Goliath AI Research Platform</h5>
+                    <p>Share Research Datasets and Easily Tap Into Apex’s Computing Power</p>
+                    <h5>Thai-Food Classification</h5>
+                    <p>Web application that will predict the name of Thai food from the input image.</p>
+                    <img src="http://via.placeholder.com/640x360" class="img-fluid border rounded-3 shadow-lg mb-4"
+                        alt="Example image" width="640" height="360" loading="lazy">
+                    <h2 class="interests mb-1" id="interests">Research Interests</h2>
+                    <ul>
+                        <li>High Performance Computing (HPC)</li>
+                        <li>Distributed System</li>
+                        <li>Virtualization</li>
+                        <li>Cloud Computing</li>
+                    </ul>
+                    <img src="http://via.placeholder.com/640x360" class="img-fluid border rounded-3 shadow-lg mb-4"
+                        alt="Example image" width="640" height="360" loading="lazy">
+                    <h2 class="scholar mb-1" id="scholarship">Scholarship</h2>
+                    <p>KMITL Full Scholarship 2022</p>
+                </article>
+
+
+                <nav class="blog-pagination" aria-label="Pagination">
+                    <a class="btn btn-outline-primary rounded-pill" href="#">Return to Top</a>
+                </nav>
+
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <footer class="py-3 my-4">
+                <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                    <li class="nav-item"><a href="#home" class="nav-link px-2 text-muted">Home</a></li>
+                    <li class="nav-item"><a href="#edu" class="nav-link px-2 text-muted">Education</a></li>
+                    <li class="nav-item"><a href="#employment" class="nav-link px-2 text-muted">Employment</a></li>
+                    <li class="nav-item"><a href="#experiences" class="nav-link px-2 text-muted">Experiences</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link px-2 text-muted">Projects</a></li>
+                    <li class="nav-item"><a href="#interests" class="nav-link px-2 text-muted">Interests</a></li>
+                    <li class="nav-item"><a href="#scholarship" class="nav-link px-2 text-muted">Scholarship</a></li>
+                </ul>
+                <p class="text-center text-muted">© 2022 Paleumm Company, Inc</p>
+            </footer>
+        </div>
+    </footer>
 </body>
 
 </html>
