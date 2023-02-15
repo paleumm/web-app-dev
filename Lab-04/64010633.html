@@ -7,73 +7,175 @@
     <div id="maincontainer"></div>
     <script>
 
+        const main_container = document.getElementById("maincontainer");
+
         // header
         const para = document.createElement("h2");
         para.innerText = "Exercise 04: JavaScript&DOM";
-        document.body.appendChild(para);
+        main_container.appendChild(para);
+
+        // Color Shift
+        let colors = ["yellow", "grey", "red", "lightgreen", "gold", "pink"];
+        let i = 0;
+        function changeColor() {
+            date_time.style.backgroundColor = colors[i];
+            i += 1;
+            i %= colors.length;
+        }
+
+        // W3 School web worker code
+        let w;
+
+        function startWorker() {
+            if (typeof (w) == "undefined") {
+                w = new Worker("64010633-worker.js");
+                date_time.innerHTML = new Date();
+            }
+            w.onmessage = function (event) {
+                date_time.innerHTML = event.data;
+                changeColor();
+            };
+        }
+
+        function stopWorker() {
+            w.terminate();
+            w = undefined;
+        }
 
         // button
-        const buttunDiv = document.createElement("div");
         const btn = document.createElement("button");
         btn.innerHTML = "Click me to display Date and Time";
-        buttunDiv.append(btn);
-        document.body.appendChild(buttunDiv);
+        main_container.appendChild(btn)
 
-        document.body.appendChild(document.createElement("br"))
-        document.body.appendChild(document.createElement("br"))
+        // date time button
+        const date_time = document.createElement("button");
+        date_time.hidden = true;
+        date_time.innerHTML = new Date();
+        date_time.style.position = "fixed";
+        date_time.style.right = "0";
+        date_time.style.top = "0";
+        date_time.style.border = "black solid";
+        main_container.appendChild(date_time);
+
+        // click on init button
+        btn.onclick = function () {
+            btn.hidden = true;
+            date_time.hidden = false;
+            startWorker();
+        }
+
+        // click on date time
+        date_time.onclick = function () {
+            if (date_time.style.position == "fixed") {
+                stopWorker();
+                date_time.style.position = "relative";
+            } else {
+                startWorker();
+                date_time.style.position = "fixed";
+            }
+        }
+
+        main_container.appendChild(document.createElement("br"))
+        main_container.appendChild(document.createElement("br"))
 
         // personal info
         const personalDiv = document.createElement("div");
-        const personalinfo = document.createElement("p");
+        const personalinfo = document.createElement("a");
         personalinfo.innerText = "Personal Info";
         personalinfo.style.color = "Orchid";
+        personalinfo.onmouseover = function () {
+            personalinfo.style.background = "yellow";
+        }
+        personalinfo.onmouseout = function () {
+            personalinfo.style.background = "transparent";
+        }
+        personalinfo.href = "#";
         personalinfo.style.textDecoration = "Underline";
         personalDiv.append(personalinfo);
-        document.body.appendChild(personalDiv);
+        main_container.appendChild(personalDiv);
+
+        // Personal Info List
+        const personal_ul = document.createElement("ul");
+        personal_ul.hidden = true;
+
+        // Name & ID
+        let name_li = document.createElement("li");
+        name_li.innerText = "Permpoon Boonyarit, ID: 64010633"
+        personal_ul.append(name_li);
+
+        // Subject
+        let subject_li = document.createElement("li");
+        subject_li.innerText = "Subject: Web Application Development"
+        personal_ul.append(subject_li);
+
+        //Semester
+        let sem_li = document.createElement("li");
+        sem_li.innerText = "Semester: 2/2565"
+        personal_ul.append(sem_li);
+
+        personalinfo.onclick = function () {
+            personal_ul.hidden = !personal_ul.hidden;
+        }
+        main_container.appendChild(personal_ul);
 
         // snapshot
         const snapshot = document.createElement("h1");
         snapshot.innerText = "Snapshots";
-        document.body.appendChild(snapshot);
+        main_container.appendChild(snapshot);
 
         // unordered list
         const ul = document.createElement("ul");
-
+        main_container.appendChild(ul);
         // firework
         const firework = document.createElement("li");
-        firework.innerText = "Fireworks";
-        firework.style.color = "blue";
+        const firework_a = document.createElement("a");
+        firework_a.href = "#";
+        firework_a.onclick = function () {
+            img.src = "https://hips.hearstapps.com/hmg-prod/images/low-angle-view-of-firework-display-at-night-royalty-free-image-1656538949.jpg?resize=1200:*";
+        }
+        firework_a.innerText = "Fireworks";
         firework.style.textDecoration = "Underline";
+        firework.append(firework_a);
+        ul.append(firework);
 
         // crest
         const crest = document.createElement("li");
-        crest.innerText = "Crest";
-        crest.style.color = "blue";
+        const crest_a = document.createElement("a");
+        crest_a.href = "#";
+        crest_a.onclick = function () {
+            img.src = "https://static.vecteezy.com/system/resources/previews/006/552/826/original/premium-quality-product-100-percen-original-logo-template-illustration-free-vector.jpg"
+        }
+        crest_a.innerText = "Crest";
         crest.style.textDecoration = "Underline";
+        crest.append(crest_a);
+        ul.append(crest);
 
         // action
         const action = document.createElement("li");
-        action.innerText = "Action";
-        action.style.color = "blue";
+        const action_a = document.createElement("a");
+        action_a.href = "#";
+        action_a.onclick = function () { img.src = "https://upload.wikimedia.org/wikipedia/commons/1/1d/Marcus_Thames_Tigers_2007.jpg" };
+        action_a.innerText = "Action";
         action.style.textDecoration = "Underline";
+        action.append(action_a);
+        ul.append(action);
 
         // buffalo
         const buffalo = document.createElement("li");
-        buffalo.innerText = "Buffalo";
-        buffalo.style.color = "blue";
+        const buffalo_a = document.createElement("a");
+        buffalo_a.href = "#";
+        buffalo_a.onclick = function () { img.src = "https://www.awf.org/sites/default/files/styles/species_image/public/2020-04/SpeciesPage_AfricanBuffalo02_Challenges.jpg?h=29c6c1f6&itok=VHn68yL8" }
+        buffalo_a.innerText = "Buffalo";
         buffalo.style.textDecoration = "Underline";
-
-        ul.append(firework);
-        ul.append(crest);
-        ul.append(action);
+        buffalo.append(buffalo_a);
         ul.append(buffalo);
-        document.body.appendChild(ul);
 
         // img
         const img = document.createElement('img');
         img.src = 'https://www.ce.kmitl.ac.th/api/main/banner/download/1';
+        img.style.height = "400px";
 
-        document.body.appendChild(img);
+        main_container.appendChild(img);
     </script>
 </body>
 
