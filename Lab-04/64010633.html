@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <div id="maincontainer"></div>
+    <script>
+
+        // header
+        const para = document.createElement("h2");
+        para.innerText = "Exercise 04: JavaScript&DOM";
+        document.body.appendChild(para);
+
+        // button
+        const buttunDiv = document.createElement("div");
+        const btn = document.createElement("button");
+        btn.innerHTML = "Click me to display Date and Time";
+        buttunDiv.append(btn);
+        document.body.appendChild(buttunDiv);
+
+        document.body.appendChild(document.createElement("br"))
+        document.body.appendChild(document.createElement("br"))
+
+        // personal info
+        const personalDiv = document.createElement("div");
+        const personalinfo = document.createElement("p");
+        personalinfo.innerText = "Personal Info";
+        personalinfo.style.color = "Orchid";
+        personalinfo.style.textDecoration = "Underline";
+        personalDiv.append(personalinfo);
+        document.body.appendChild(personalDiv);
+
+        // snapshot
+        const snapshot = document.createElement("h1");
+        snapshot.innerText = "Snapshots";
+        document.body.appendChild(snapshot);
+
+        // unordered list
+        const ul = document.createElement("ul");
+
+        // firework
+        const firework = document.createElement("li");
+        firework.innerText = "Fireworks";
+        firework.style.color = "blue";
+        firework.style.textDecoration = "Underline";
+
+        // crest
+        const crest = document.createElement("li");
+        crest.innerText = "Crest";
+        crest.style.color = "blue";
+        crest.style.textDecoration = "Underline";
+
+        // action
+        const action = document.createElement("li");
+        action.innerText = "Action";
+        action.style.color = "blue";
+        action.style.textDecoration = "Underline";
+
+        // buffalo
+        const buffalo = document.createElement("li");
+        buffalo.innerText = "Buffalo";
+        buffalo.style.color = "blue";
+        buffalo.style.textDecoration = "Underline";
+
+        ul.append(firework);
+        ul.append(crest);
+        ul.append(action);
+        ul.append(buffalo);
+        document.body.appendChild(ul);
+
+        // img
+        const img = document.createElement('img');
+        img.src = 'https://www.ce.kmitl.ac.th/api/main/banner/download/1';
+
+        document.body.appendChild(img);
+    </script>
+</body>
+
+</html>
