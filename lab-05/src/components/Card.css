@@ -1,0 +1,62 @@
+.card {
+    background-color: antiquewhite;
+    padding: 20px;
+    border: 3px solid;
+    margin: auto;
+    border-radius: 10px;
+    width: 60%;
+}
+
+.food {
+    display: flex;
+    flex-direction: column;
+}
+
+.food-type {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.food-name {
+    font-size: 18px;
+    padding: 18px 0;
+    font-weight: bold;
+}
+
+.food-info {
+    font-size: 18px;
+}
+
+.food-image img {
+    height: 150px;
+}
+
+.card-container {
+    display: flex;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    align-items: flex-end;
+}
+
+.button-container div {
+    background-color: lawngreen;
+    color: darkorchid;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: solid 3px black;
+    border-radius: 10px;
+    text-align: center;
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+    height: 30px;
+    width: auto;
+    margin: 0 15px;
+    padding: 5px 5px;
+}
